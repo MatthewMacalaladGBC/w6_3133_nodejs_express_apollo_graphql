@@ -1,6 +1,13 @@
+import dns from "dns";
+
+// Force IPv4 DNS 
+// DNS issue when connecting to MongoDB on home internet, quick fix by forcing IPv4 instead of IPv6
+dns.setDefaultResultOrder("ipv4first");
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
+
+import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import movieSchema from './schemas/schema.js';
 import movieResolvers from './resolvers/resolvers.js';
 import mongoose from 'mongoose';
