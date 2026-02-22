@@ -11,9 +11,9 @@ const movieSchema = gql`
     }
 
     type Query {
-        movies: [Movie]
-        movie(id: ID!): Movie
-        moviesByDirector(director_name: String!): [Movie]
+        getAllMovies: [Movie]
+        getMovieById(id: ID!): Movie
+        getMoviesByDirector(director_name: String!): [Movie]
     }
 
     type Mutation {

@@ -41,7 +41,7 @@ const resolvers = {
     },
 
     Mutation: {
-        createMovie: async (_, { name, director_name, production_house, release_date, rating }) => {
+        addMovie: async (_, { name, director_name, production_house, release_date, rating }) => {
             const newMovie = new MovieModel({
                 name,
                 director_name,
